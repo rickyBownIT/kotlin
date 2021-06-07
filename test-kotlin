@@ -1,0 +1,48 @@
+import kotlin.reflect.typeOf
+
+@OptIn(ExperimentalStdlibApi::class)
+fun main(args: Array<String>){
+    println("hello");
+
+    var a = 10; //Variable
+    val b = 20; //Constant
+
+    var c:Int = 30; // Numeric Types:  Int - Byte - Char - Short - Boolean - Long - Float - Double
+
+    var n:Int? = null;
+    println(n?.javaClass?.name);
+
+    //Other Types: prefix 0b = binary - prefix 0x = Hexadecimal - numL or l = Long - num.num = double - num.numF = Float - true or false = Bool - 'letter' = char
+
+    var longNumber = 1_000_000; //For better legibility
+
+    val l:Long = a.toLong(); //Conversions
+
+    println(a == b);
+
+    //Escape characters: \t = tab - \b = backspace - \n = newline - \r = retChar
+    //Boolean operator: and/&& - or/|| - not/! - xor
+
+    var int1 = -1
+    var int2 = 0
+    var resultOr = !(++int1 > 0) and (++int2 > 0)
+    println("int1 = $int1 \nint2 = $int2 \nresultOr = $resultOr")
+
+    val x = 0xff shl 1; //shift
+    println(x)
+
+    //Uguaglianza strutturale: == - !==
+    //Uguaglianza referenziale === - !===
+
+    class MyClass(var name:String){
+    }
+
+    var obj1 = MyClass("ciao")
+    var obj2 = MyClass("ciao")
+    var areEqual = obj1 === obj2
+    println(areEqual)
+
+    var obj3 = obj1
+    var areEqual2 = obj3 === obj1
+    println(areEqual2)
+}
